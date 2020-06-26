@@ -16,8 +16,8 @@ def hello_world():
 def deblob():
     if request.data is not None:
         try:
-            # TODO: make file name unique
             content_header = request.headers['Content-Type']
+            # Basing content type off of JS blob type: "image/png"
             ctype = content_header.rsplit('/', 1)[-1]
             rand = uuid.uuid4().hex
             fh = open(rand + "." + ctype, "wb")
