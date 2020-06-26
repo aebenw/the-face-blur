@@ -1,12 +1,9 @@
 from flask import Flask
 from flask import request
 from flask_cors import CORS
-import base64
-import json
-import codecs
+import uuid
 
 
-print(__name__)
 app = Flask(__name__)
 app.debug = True
 CORS(app)
@@ -20,7 +17,10 @@ def deblob():
     if request.data is not None:
         try:
             # TODO: make file name unique
-            fh = open("imageToSave.png", "wb")
+            content_header = request.headers['Content-Type']
+            ctype = content_header.rsplit('/', 1)[-1]
+            rand = uuid.uuid4().hex
+            fh = open(rand + "." + ctype, "wb")
             fh.write(request.data)
             fh.close()
             return "File saved to server"
