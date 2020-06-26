@@ -30,8 +30,8 @@ This should activate the server on port 5000
 * Reference https://flask.palletsprojects.com/en/1.1.x/quickstart/ for details
 
 ## To Do 
-- [] Deblob object send to pyscript
-- [] Send data back as blurred video
-- [] Image url for image uploads
-- [] Create DockerFile for server code
-- [] Set up ALB (with https) or APIGW to ping Server
+- [ ] Deblob object send to pyscript
+- [ ] Send data back as blurred video
+- [ ] Image url for image uploads
+- [ ] Create DockerFile for server code
+- [ ] Set up ALB (with https) or APIGW to ping Server
