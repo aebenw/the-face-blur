@@ -1,2 +1,5 @@
 venv/
 assets/
+*.pyc
+*.png
+*.mp4
