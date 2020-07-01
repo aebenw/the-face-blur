@@ -21,9 +21,6 @@ def blur_vid(file_name):
 	a[-1] = c
 	output_path = '/'.join(a)
 
-	print(output_path)
-
-
 	width = int(cap.get(3)) if cap.isOpened() else 640
 	height = int(cap.get(4)) if cap.isOpened() else 360
 
