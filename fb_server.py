@@ -33,8 +33,6 @@ def deblob():
             fh = open(file_name, "wb")
             fh.write(request.data)
             fh.close()
-            # TODO: IF ctype == .png / jpeg / etc etc - go to image
-            # TODO: IF ctype == .mp4 / etc etc - go to video
             if ctype in C['image_types']:
                 new_file = blur_image(file_name)
             else:
