@@ -29,6 +29,11 @@ python3 -m flask run
 This should activate the server on port 5000
 * Reference https://flask.palletsprojects.com/en/1.1.x/quickstart/ for details
 
+## Setting up Docker
+- Run `docker build -t faceblur . `
+- After the image has built, run `docker run -p 5000:5000 -it faceblur`
+- The container should be serving over localhost 5000
+
 ## To Do 
 - [ ] Deblob object send to pyscript
 - [ ] Send data back as blurred video
