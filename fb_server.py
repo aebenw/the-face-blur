@@ -1,8 +1,6 @@
 import io
-import os
 import uuid
 from consts import C
-
 from flask import Flask, request, send_file
 from flask_cors import CORS
 from blur_face import blur_image
@@ -29,7 +27,6 @@ def deblob():
             ctype = meme_type.rsplit('/', 1)[-1]
             rand = uuid.uuid4().hex
             file_name = "./assets/" + rand + "." + ctype
-            # file_name = os.getcwd() + "/assets/dem-test" + "." + ctype
             fh = open(file_name, "wb")
             fh.write(request.data)
             fh.close()
