@@ -1,6 +1,4 @@
-import io
-import os
-import uuid
+import io, uuid, os
 from consts import C
 from flask import Flask, request, send_file
 from flask_cors import CORS
@@ -32,6 +30,11 @@ def deblob():
                 new_file = blur_image(file_name)
             else:
                 new_file = blur_vid(file_name)
+
+            if os.path.exists(file_name):
+                os.remove(file_name)
+            if os.path.exists(new_file):
+                os.remove(new_file)
 
             with open(new_file, 'rb') as bites:
                 response = send_file(
