@@ -1,5 +1,4 @@
-import io
-import uuid
+import io, uuid, os
 from consts import C
 from flask import Flask, request, send_file
 from flask_cors import CORS
@@ -9,9 +8,6 @@ from blur_face_video import blur_vid
 app = Flask(__name__)
 app.debug = True
 CORS(app)
-
-image_types = ['img', 'png', 'jpeg']
-video_types = ['mp4']
 
 @app.route('/')
 def hello_world():
@@ -34,6 +30,11 @@ def deblob():
                 new_file = blur_image(file_name)
             else:
                 new_file = blur_vid(file_name)
+
+            if os.path.exists(file_name):
+                os.remove(file_name)
+            if os.path.exists(new_file):
+                os.remove(new_file)
 
             with open(new_file, 'rb') as bites:
                 return send_file(
