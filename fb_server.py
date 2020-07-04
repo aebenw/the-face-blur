@@ -37,11 +37,19 @@ def deblob():
                 os.remove(new_file)
 
             with open(new_file, 'rb') as bites:
-                return send_file(
+                response = send_file(
                     io.BytesIO(bites.read()),
                     attachment_filename=new_file,
                     mimetype=meme_type
                 )
+
+            if os.path.exists(file_name):
+                os.remove(file_name)
+
+            if os.path.exists(new_file):
+                os.remove(new_file)
+
+            return response
 
         except Exception as e:
             app.logger.debug("e", e)

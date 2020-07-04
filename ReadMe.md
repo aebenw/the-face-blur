@@ -35,8 +35,8 @@ This should activate the server on port 5000
 - The container should be serving over localhost 5000
 
 ## To Do 
-- [ ] Deblob object send to pyscript
+- [x] Deblob object send to pyscript
 - [ ] Send data back as blurred video
-- [ ] Image url for image uploads
-- [ ] Create DockerFile for server code
-- [ ] Set up ALB (with https) or APIGW to ping Server
+- [x] Create DockerFile for server code
+- [x] Set up ALB (with https) ~or APIGW to ping Server~
+- [ ] Set up CORS with app ID on either the server, the ALB or Both

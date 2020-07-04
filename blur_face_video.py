@@ -1,5 +1,4 @@
-from pyimagesearch.face_blurring import anonymize_face_pixelate
-from pyimagesearch.face_blurring import anonymize_face_simple
+from pyimagesearch.face_blurring import anonymize_face_simple, anonymize_face_pixelate
 import numpy as np
 import cv2
 import os
