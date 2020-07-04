@@ -69,4 +69,4 @@ def blur_vid(file_name):
 	out.release()
 	cv2.destroyAllWindows()
 	cap.release()
-	return file_name
+	return output_path
